@@ -1,17 +1,24 @@
+
 name: ZERO
+
 options:
   bundleIdPrefix: com.zero
   deploymentTarget:
     iOS: "14.0"
+
 targets:
   ZERO:
     type: application
     platform: iOS
+
     sources:
       - path: ZERO
-        excludes: ["index.html"]
+        excludes:
+          - index.html
       - path: ZERO/index.html
         buildPhase: resources
+        type: file
+
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.zero.editor
@@ -20,7 +27,6 @@ targets:
         CURRENT_PROJECT_VERSION: "1"
         TARGETED_DEVICE_FAMILY: "1,2"
         GENERATE_INFOPLIST_FILE: YES
-        INFOPLIST_KEY_UILaunchScreen_Generation: YES
         INFOPLIST_KEY_CFBundleDisplayName: ZERO
         INFOPLIST_KEY_UIStatusBarStyle: UIStatusBarStyleLightContent
         INFOPLIST_KEY_UISupportedInterfaceOrientations: "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
